@@ -1,48 +1,97 @@
 console.log("Hello, world! From the index.js file!");
 
-let customPortNumber = null;
+// //#region Basic conditional logic and for loops
 
-const PORT = customPortNumber ??= 5000;
-// const PORT = customPortNumber || 5000;
+// let customPortNumber = null;
 
-console.log("Port is " + PORT);
-console.log("Custom port number is: " + customPortNumber);
+// const PORT = customPortNumber ??= 5000;
+// // const PORT = customPortNumber || 5000;
 
-let dinner = "butter chicken";
+// console.log("Port is " + PORT);
+// console.log("Custom port number is: " + customPortNumber);
 
-// Loose quality, dinner will be coerced into a string!
-if (dinner == "butter chicken"){
-	console.log("I'm full!");
-} else {
-	console.log("I'm ready for dessert!");
-}
+// let dinner = "butter chicken";
 
-let luckyNumber = 42;
+// // Loose quality, dinner will be coerced into a string!
+// if (dinner == "butter chicken"){
+// 	console.log("I'm full!");
+// } else {
+// 	console.log("I'm ready for dessert!");
+// }
 
-// Strict equality, comparison will not be true!
-if (luckyNumber === "42") {
-	console.log("Lucky number is the answer to life, the universe, and everything!");
-} else {
-	console.log("Lucky number is nice, sure, but ehh...");
-}
+// let luckyNumber = 42;
 
-// if (dinner == "butter chicken") console.log("I'm full!");
+// // Strict equality, comparison will not be true!
+// if (luckyNumber === "42") {
+// 	console.log("Lucky number is the answer to life, the universe, and everything!");
+// } else {
+// 	console.log("Lucky number is nice, sure, but ehh...");
+// }
 
-for (let index = 0; index < 10; index++) {
-	console.log(index);
+// // if (dinner == "butter chicken") console.log("I'm full!");
+
+// for (let index = 0; index < 10; index++) {
+// 	console.log(index);
 	
+// }
+
+// let fruits = ["apple", "mango", "banana"];
+
+// // FOR loops are best for performance
+// for (let index = 0; index < fruits.length; index++) {
+// 	const fruit = fruits[index];
+// 	console.log(fruit);
+// }
+
+// // FOREACH is better for readability for devs, but it's
+// // a wrapper around FOR, so it's slower than FOR 
+// fruits.forEach(fruit => {
+// 	console.log(fruit);
+// });
+
+// //#endregion
+
+//#region Functions 
+
+function exampleFunction(){
+	console.log("Function code happens here!");
 }
 
-let fruits = ["apple", "mango", "banana"];
+exampleFunction();
 
-// FOR loops are best for performance
-for (let index = 0; index < fruits.length; index++) {
-	const fruit = fruits[index];
-	console.log(fruit);
+exampleFunction();
+
+function messageRepeater(messageToRepeat){
+	console.log(messageToRepeat + messageToRepeat + messageToRepeat);
+	console.log("Regular function here! Here is the value of this:" + this);
 }
 
-// FOREACH is better for readability for devs, but it's
-// a wrapper around FOR, so it's slower than FOR 
-fruits.forEach(fruit => {
-	console.log(fruit);
-});
+for (let index = 0; index < 2; index++) {
+	messageRepeater("hello");
+}
+
+let favouriteDinners = [
+	"palak paneer",
+	"katsu curry",
+	"dumplings",
+	"laghman",
+	"lentil bolognese"
+];
+
+// favouriteDinners.forEach(dinner => {
+// 	messageRepeater(dinner);
+// });
+
+favouriteDinners.forEach(dinner => messageRepeater(dinner));
+
+const messageRepeaterArrowFunction = (messageToRepeat) => {
+	console.log("Arrow function here! Here is the value of this:" + this);
+}
+messageRepeaterArrowFunction("bananas");
+
+// Use const in the function declaration to avoid accidentally doing this:
+// messageRepeaterArrowFunction = "bananas";
+
+//#endregion
+
+
