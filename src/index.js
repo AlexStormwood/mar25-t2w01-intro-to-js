@@ -51,47 +51,95 @@ console.log("Hello, world! From the index.js file!");
 
 // //#endregion
 
-//#region Functions 
 
-function exampleFunction(){
-	console.log("Function code happens here!");
+
+
+// //#region Functions 
+
+// function exampleFunction(){
+// 	console.log("Function code happens here!");
+// }
+
+// exampleFunction();
+
+// exampleFunction();
+
+// function messageRepeater(messageToRepeat){
+// 	console.log(messageToRepeat + messageToRepeat + messageToRepeat);
+// 	console.log("Regular function here! Here is the value of this:" + this);
+// }
+
+// for (let index = 0; index < 2; index++) {
+// 	messageRepeater("hello");
+// }
+
+// let favouriteDinners = [
+// 	"palak paneer",
+// 	"katsu curry",
+// 	"dumplings",
+// 	"laghman",
+// 	"lentil bolognese"
+// ];
+
+// // favouriteDinners.forEach(dinner => {
+// // 	messageRepeater(dinner);
+// // });
+
+// favouriteDinners.forEach(dinner => messageRepeater(dinner));
+
+// const messageRepeaterArrowFunction = (messageToRepeat) => {
+// 	console.log("Arrow function here! Here is the value of this:" + this);
+// }
+// messageRepeaterArrowFunction("bananas");
+
+// // Use const in the function declaration to avoid accidentally doing this:
+// // messageRepeaterArrowFunction = "bananas";
+
+// //#endregion
+
+
+//#region Classes 
+
+class ExampleClass {
+	constructor(){
+		console.log("ExampleClass instance created!");
+	}
+
+	messageRepeater = (messageToRepeat) => {
+		console.log(messageToRepeat + messageToRepeat + messageToRepeat);
+		console.log("Arrow function of class instance has a value for this of: " + this);
+	}
 }
 
-exampleFunction();
+let exampleInstance = new ExampleClass();
 
-exampleFunction();
+console.log(exampleInstance);
+console.log(typeof exampleInstance);
+exampleInstance.messageRepeater("bananas");
 
-function messageRepeater(messageToRepeat){
-	console.log(messageToRepeat + messageToRepeat + messageToRepeat);
-	console.log("Regular function here! Here is the value of this:" + this);
+
+function functionThatThrowsAnError(){
+	throw new Error("example error");
+}
+try {
+	let exampleError = functionThatThrowsAnError();
+	console.log("Example error value" + exampleError);
+} catch (error) {
+	console.log("Caught error is: " + error);
 }
 
-for (let index = 0; index < 2; index++) {
-	messageRepeater("hello");
+
+function adder(num1, num2) {
+	return num1 + num2;
 }
 
-let favouriteDinners = [
-	"palak paneer",
-	"katsu curry",
-	"dumplings",
-	"laghman",
-	"lentil bolognese"
-];
+let result = adder(1,1);
+console.log("Result is: " + result);
+console.log(result == 2);
 
-// favouriteDinners.forEach(dinner => {
-// 	messageRepeater(dinner);
-// });
 
-favouriteDinners.forEach(dinner => messageRepeater(dinner));
 
-const messageRepeaterArrowFunction = (messageToRepeat) => {
-	console.log("Arrow function here! Here is the value of this:" + this);
-}
-messageRepeaterArrowFunction("bananas");
 
-// Use const in the function declaration to avoid accidentally doing this:
-// messageRepeaterArrowFunction = "bananas";
+
 
 //#endregion
-
-
