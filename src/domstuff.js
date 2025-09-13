@@ -16,9 +16,6 @@ function paragraphTagUpdater(){
 
 paragraphTagUpdater();
 
-
-
-
 // Breakfast Menu renderer 
 
 let breakfastMenuItems = [
@@ -113,11 +110,14 @@ function breakfastRenderer () {
 	
 }
 
-breakfastRenderer();
+// breakfastRenderer();
 
 
 
 
+
+let menuToggleButton = document.getElementById("menuToggleButton");
+menuToggleButton.addEventListener("click", breakfastRenderer);
 
 
 
